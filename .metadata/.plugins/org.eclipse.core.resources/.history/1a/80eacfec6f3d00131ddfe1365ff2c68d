@@ -1,0 +1,190 @@
+import java.sql.*;
+import java.util.Collections;
+import java.util.Vector;
+import read_text.*;
+import java.io.*;
+import java.util.Collections;
+
+public class Indexing
+{
+	public static	Connection connection = null;
+	public static  Statement stmt = null;
+	public static Vector<String> list = new Vector();
+	public static int id =1;
+	
+	public static void connect()
+	{
+		
+		try 
+		 {
+			Class.forName("com.mysql.jdbc.Driver");
+		 } 
+		catch (ClassNotFoundException e) 
+		 {
+			System.out.println("Where is your MySQL JDBC Driver?");
+			e.printStackTrace();
+			return;
+		 }
+
+		System.out.println("MySQL JDBC Driver Registered!");
+
+	  try 
+		{
+			connection = DriverManager
+			.getConnection("jdbc:mysql://localhost:3306/projecttest","root", "");
+
+		} 
+		catch (SQLException e)
+		{
+			System.out.println("Connection Failed! Check output console");
+			e.printStackTrace();
+			return;
+		}
+
+		if (connection != null)
+		{
+			System.out.println("You made it, take control your database now!");
+		} 
+		else
+		{
+			System.out.println("Failed to make connection!");
+		}
+
+	  }
+	
+	
+	public static int check_vector(String root)
+	{
+		int flag=0;
+		if(list.contains(root))
+		    flag = 1;
+		if(flag==1)
+			return 1;
+		else
+			return 0;
+		
+	}
+	
+	public static void update(String root)
+	{  
+	   int freq = 0;
+	   connect();
+	   
+	    try
+	      {	
+	       
+		   stmt = connection.createStatement(); 
+		   
+		   String sql = "SELECT frequency FROM indexing " + 
+			            "WHERE term = " + "'" + root + "'";
+			            
+		   ResultSet rs = stmt.executeQuery(sql);
+		   while(rs.next())
+			 freq =  rs.getInt("frequency");
+		     freq++;
+		  
+		     String sql1 = "UPDATE indexing " + 
+				        "SET frequency=" + freq +
+				        " WHERE term = " + "'" + root + "'";
+		 stmt.executeUpdate(sql1);
+	  }
+	   catch (SQLException se)
+	   {
+		//Handle errors for JDBC
+         se.printStackTrace();
+	   }
+      catch(Exception e)
+      {
+       //Handle errors for Class.forName
+        e.printStackTrace();
+      }
+	    try { connection.close(); } catch (Exception e) {}
+   }
+	
+	
+	 public static void add_word(String root,int page_number)
+	 {
+		 list.addElement(root);
+		 connect();
+		
+		 try
+		{
+		 stmt = connection.createStatement(); 
+		   
+		   String sql = "INSERT INTO indexing " + 
+			            "VALUES (" + id + ", '" + root + "' , 1 , " + page_number +", 'Computer Networking')";
+		   
+		   stmt.executeUpdate(sql);
+		   id++;
+		}
+		 catch (SQLException se)
+		   {
+			//Handle errors for JDBC
+	         se.printStackTrace();
+		   }
+	      catch(Exception e)
+	      {
+	       //Handle errors for Class.forName
+	        e.printStackTrace();
+	      }
+		 try { connection.close(); } catch (Exception e) {}
+	 }
+	
+	public static void main(String[] argv) 
+	{
+		String path = new String();
+		int number_of_pages; 
+		String root = new String();
+		
+		connect();
+		
+		try
+		 {
+		  System.out.println("Creating table in given database...");
+	      stmt = connection.createStatement();
+	    
+	       String sql = "CREATE TABLE INDEXING " +
+	                  "(id INTEGER not NULL, " +
+	                  " term VARCHAR(70), " + 
+	                  " frequency INTEGER, " + 
+	                  " page_number INTEGER, " +
+	                  " book_title VARCHAR(70), " +
+	                  " PRIMARY KEY ( id ))";
+	       stmt.executeUpdate(sql);
+	       System.out.println("Created table in given database...");
+		} 
+		catch (SQLException se)
+		  {
+			//Handle errors for JDBC
+	          se.printStackTrace();
+		  }
+	    catch(Exception e)
+	      {
+	        //Handle errors for Class.forName
+	         e.printStackTrace();
+	      }
+		number_of_pages= new File("H:/book").listFiles().length;
+		 reading rd = new reading();
+		 int j = 70;
+//		for( j=1;j<=number_of_pages;j++)
+		{
+		  path = "F:/book/"+ j +".txt";
+		  rd.f_array.removeAllElements();
+		  rd.ReadFile(path);
+		  Collections.sort(rd.f_array);
+		  
+		  for(int i=0;i<rd.f_array.size();i++)
+		  {   
+			  root = rd.f_array.elementAt(i);
+		     if(check_vector(root)==1)
+		    	 update(root);
+		     else
+		    	 add_word(root,j);
+		  }
+		  list.removeAllElements();
+		}
+	
+		
+	} 
+
+}

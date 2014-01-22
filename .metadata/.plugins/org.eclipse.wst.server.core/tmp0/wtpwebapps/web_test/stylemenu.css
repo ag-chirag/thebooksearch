@@ -1,0 +1,141 @@
+
+
+
+body {
+	font-family: sans-serif;
+	font-weight: normal;
+	margin: 10px;
+	color: #999;
+	background-color: ;
+}
+
+
+
+
+// selects is just the tag name for the togglr buttons
+
+
+
+form {
+	margin: 40px 0;
+}
+
+div {
+	float: left;
+	margin: 0 0 ;
+}
+
+label {
+  width: 150px;
+  border-radius: 3px;
+  border: 0.4px solid #D1D3D4
+}
+
+/* hide input */
+input.radio:empty {
+	margin-left: -3999px;
+}
+
+/* style label */
+input.radio:empty ~ label {
+	position: relative;
+	float: left;
+	line-height: 1.5em;
+	text-indent: 2.25em;
+	margin-top: 2em;
+	cursor: pointer;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+input.radio:empty ~ label:before {
+	position: absolute;
+	display: block;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	content: '';
+	width: 1.5em;
+	background: #D1D3D4;
+	border-radius: 3px 0 0 3px;
+}
+
+/* toggle hover */
+input.radio:hover:not(:checked) ~ label:before {
+	content:'\2714';
+	text-indent: .5em;
+	color: #C2C2C2;
+}
+
+input.radio:hover:not(:checked) ~ label {
+	color: #888;
+}
+
+/* toggle on */
+input.radio:checked ~ label:before {
+	content:'\2714';
+	text-indent: .5em;
+	color: #9CE2AE;
+	background-color: #088A08;     /* color of the check */
+}
+
+input.radio:checked ~ label {
+	color: #777;
+}
+
+/* radio focus */
+input.radio:focus ~ label:before {
+	box-shadow: 0 0 0 3px #999;
+}
+
+
+
+.button {
+   border: 1px solid #06781d;
+   background: #2ea80f;
+   background: -webkit-gradient(linear, left top, left bottom, from(#0ec20e), to(#2ea80f));
+   background: -webkit-linear-gradient(top, #0ec20e, #2ea80f);
+   background: -moz-linear-gradient(top, #0ec20e, #2ea80f);
+   background: -ms-linear-gradient(top, #0ec20e, #2ea80f);
+   background: -o-linear-gradient(top, #0ec20e, #2ea80f);
+   background-image: -ms-linear-gradient(top, #0ec20e 0%, #2ea80f 100%);
+   padding: 10.5px 21px;
+   -webkit-border-radius: 6px;
+   -moz-border-radius: 6px;
+   border-radius: 6px;
+   -webkit-box-shadow: rgba(255,255,255,0.4) 0 1px 0, inset rgba(255,255,255,0.4) 0 1px 0;
+   -moz-box-shadow: rgba(255,255,255,0.4) 0 1px 0, inset rgba(255,255,255,0.4) 0 1px 0;
+   box-shadow: rgba(255,255,255,0.4) 0 1px 0, inset rgba(255,255,255,0.4) 0 1px 0;
+   text-shadow: #25b035 0 1px 0;
+   color: #010c14;
+   font-size: 14px;
+   font-family: helvetica, serif;
+   text-decoration: none;
+   vertical-align: middle;
+   }
+.button:hover {
+   border: 1px solid #0b661d;
+   text-shadow: #1b854c 0 1px 0;
+   background: #2bb81b;
+   background: -webkit-gradient(linear, left top, left bottom, from(#34bd1e), to(#2bb81b));
+   background: -webkit-linear-gradient(top, #34bd1e, #2bb81b);
+   background: -moz-linear-gradient(top, #34bd1e, #2bb81b);
+   background: -ms-linear-gradient(top, #34bd1e, #2bb81b);
+   background: -o-linear-gradient(top, #34bd1e, #2bb81b);
+   background-image: -ms-linear-gradient(top, #34bd1e 0%, #2bb81b 100%);
+   color: #fff;
+   }
+.button:active {
+   text-shadow: #065c13 0 1px 0;
+   border: 1px solid #1f730e;
+   background: #1fcc16;
+   background: -webkit-gradient(linear, left top, left bottom, from(#09750d), to(#2bb81b));
+   background: -webkit-linear-gradient(top, #09750d, #1fcc16);
+   background: -moz-linear-gradient(top, #09750d, #1fcc16);
+   background: -ms-linear-gradient(top, #09750d, #1fcc16);
+   background: -o-linear-gradient(top, #09750d, #1fcc16);
+   background-image: -ms-linear-gradient(top, #09750d 0%, #1fcc16 100%);
+   color: #fff;
+   }

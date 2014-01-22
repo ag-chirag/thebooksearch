@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+
+
+<style>
+
+
+.center
+{
+text-align:center;                                <!-- class to align text in centre -->
+}
+
+
+.imgpos {
+	position: absolute;                      
+	top: 80px;                               
+	left: 430px;
+}                                               
+
+h1 {text-shadow:3px 3px #C47451;}
+
+</style>
+
+
+<link rel="stylesheet" type="text/css" href="stylemenu.css">    <!-- to link the css file -->          
+
+</head>
+
+<body>
+
+
+ 
+
+
+
+<p><img src="H:/mini project/front end/abc.png" class="imgpos" width="500" height="250"/></p>
+
+<div style="letter-spacing:12px;"><h1 style= "position:absolute; top: 320px; left: 480px;" class="center">The Book Search</h1></div>
+
+
+
+<h2 style= "position:absolute; top: 370px; left: 480px;" class="center">
+<form name="input" class="center" action="html_form_action.asp" method="get">
+<input type="text" size="50" name="user">
+
+<!--<input type="submit" value="Search">               normal button-->
+
+<a href='#' class='button'>Search</a>
+
+</form></h2>
+
+ 
+<div style= "position:absolute; top: 15px; left: 910px;">
+<a href='#' class='button'>History</a>
+<a href='#' class='button'>Upload</a>
+<a href='#' class='button'>Delete</a>
+<a href='bookApplet.html' class='button'>Book Name Change</a>
+</div>
+
+<!--
+
+<div id="selects" style= "position:absolute; top: 400px; left: 370px;" class="center">
+    <label class="blue"><input type="radio" name="toggle"><span>General</span></label>
+    <label class="green"><input type="radio" name="toggle"><span>Wildcard</span></label>
+    <label class="yellow"><input type="radio" name="toggle"><span>Boosted</span></label>
+    <label class="red"><input type="radio" name="toggle"><span>Asterik</span></label>
+    <label class="purple"><input type="radio" name="toggle"><span>Boolean</span></label>
+</div>
+
+-->
+
+<div style= "position:absolute; top: 410px; left: 430px;">
+<input type="radio" name="radio" id="radio1" class="radio" checked/>
+<label for="radio1">General</label>
+</div>
+
+<div style= "position:absolute; top: 410px; left: 530px;">
+<input type="radio" name="radio" id="radio2" class="radio"/>
+<label for="radio2">Asterik</label>
+</div>
+
+<div style= "position:absolute; top: 410px; left: 625px;">	
+<input type="radio" name="radio" id="radio3" class="radio"/>
+<label for="radio3">Boolean</label>
+</div>
+
+<div style= "position:absolute; top: 410px; left: 730px;">
+<input type="radio" name="radio" id="radio4" class="radio"/>
+<label for="radio4">Boosted</label>
+</div>
+
+
+<div style= "position:absolute; top: 410px; left: 840px;">
+<input type="radio" name="radio" id="radio5" class="radio"/>
+<label for="radio5">Wildcard</label>
+</div>
+
+
+
+
+</body>
+</html>

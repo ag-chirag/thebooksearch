@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.7"/>
+	<classpathentry kind="lib" path="C:/iText/itextpdf-5.4.4.jar"/>
+	<classpathentry kind="lib" path="C:/iText/itextpdf-5.4.4-javadoc.jar"/>
+	<classpathentry kind="lib" path="C:/iText/itextpdf-5.4.4-sources.jar"/>
+	<classpathentry kind="lib" path="C:/iText/itext-pdfa-5.4.4.jar"/>
+	<classpathentry kind="lib" path="C:/iText/itext-pdfa-5.4.4-javadoc.jar"/>
+	<classpathentry kind="lib" path="C:/iText/itext-pdfa-5.4.4-sources.jar"/>
+	<classpathentry kind="lib" path="C:/iText/itext-xtra-5.4.4.jar"/>
+	<classpathentry kind="lib" path="C:/iText/itext-xtra-5.4.4-javadoc.jar"/>
+	<classpathentry kind="lib" path="C:/iText/itext-xtra-5.4.4-sources.jar"/>
+	<classpathentry kind="lib" path="C:/mysql-connector.jar/mysql-connector.jar"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/stemmer"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/documents"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/project4"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/reverseindex"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/searching"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/titles"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/project1"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/astrik search"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/boolean seperator"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/boosted search"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/wildcard search"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
